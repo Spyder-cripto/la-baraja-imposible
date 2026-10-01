@@ -11,6 +11,7 @@ tarjetas ilustradas con todas las reglas.
 ## Cómo se juega
 - **Objetivo:** lleva cada caja a la diana de su palo. Una caja en su diana se vuelve de oro.
 - **Flechas:** mover · **Z:** deshacer · **R:** reiniciar.
+- **Contador de pasos:** empieza con dos cifras; la tercera aparece a los 100 pasos y la cuarta a los 1000.
 - **En el móvil:** desliza el dedo para moverte; deshacer y reiniciar están en la pestaña del borde izquierdo.
 - Se empuja una sola caja cada vez y no se puede tirar de ellas.
 - **Hielo:** lo que lo pisa sigue deslizando hasta salir a suelo firme (un solo paso).

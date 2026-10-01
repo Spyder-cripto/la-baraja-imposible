@@ -128,6 +128,25 @@ Wall
 0000000100000000
 1111111111111111
 
+TapaCifra
+#7086ab #53658b #93a6c8
+2222222222222221
+0000000000000001
+0000000000000001
+0000000000000001
+0000000000000001
+0000000000000001
+0000000000000001
+1111111111111111
+2222222122222222
+0000000100000000
+0000000100000000
+0000000100000000
+0000000100000000
+0000000100000000
+0000000100000000
+1111111111111111
+
 Player
 #1d2b53 #2f6fd6 #f2c79b #ffffff #b9504a #f2c14e
 ................
@@ -3591,8 +3610,8 @@ i = M9
 @ = Odisea
 u = U_Marker and D0
 t = T_Marker and D0
-w = H_Marker and D0
-Ⅿ = K_Marker and D0
+w = H_Marker and D0 and TapaCifra
+Ⅿ = K_Marker and D0 and TapaCifra
 _ = Player and IceFloor
 
 ⇄ = CamBox
@@ -3739,6 +3758,7 @@ Dir_U, Dir_D, Dir_L, Dir_R
 Slide_U, Slide_D, Slide_L, Slide_R
 Origin_PR1, Origin_PR2, Origin_PG1, Origin_PG2, Origin_PB1, Origin_PB2, Origin_PY1, Origin_PY2, Origin_PV1, Origin_PV2, Origin_PT1, Origin_PT2
 Player,Wall,CR,CG,CB,CY,CC,CV,CN,RD,GD,BD,YD,CD,VD,Door_Closed,Door2_Closed,Door3_Closed,Door4_Closed,Magnet_U,Magnet_D,Magnet_L,Magnet_R,MagSwitch,MagSwitch_R,MagSwitch_D,MagSwitch_L,D0,D1,D2,D3,D4,D5,D6,D7,D8,D9,SleepA,SleepB,AndDoorClosed,OrDoorClosed,NotDoorClosed,MemDoorClosed,TimeDoorClosed,LeverOff,LeverOn,EnemyR,EnemyL,Clone,GuardR,GuardL,LockRed,LockBlue,CamBox,CamN,CamR,CamG,SwapLever,HoundR,HoundL,Bomb,LazyDoorClosed,Whistle,HeavyBox,ShyBox,CloneV,TurtleR,TurtleL,LockGreen,LockYellow,AndDoorClosed2,AndDoorClosed3,AndDoorClosed4,AndDoorClosed5,NandDoorClosed,NandDoorClosed2,NandDoorClosed3,NandDoorClosed4,NandDoorClosed5,DecoWall1,DecoWall2,DecoWall3
+TapaCifra
 GhostR, GhostL
 AuraA, AuraB
 HasRed, HasBlue, HasGreen, HasYellow
@@ -5584,6 +5604,14 @@ late [ Car3 ] [ K_Marker D5 ] -> [ ] [ K_Marker D6 ]
 late [ Car3 ] [ K_Marker D6 ] -> [ ] [ K_Marker D7 ]
 late [ Car3 ] [ K_Marker D7 ] -> [ ] [ K_Marker D8 ]
 late [ Car3 ] [ K_Marker D8 ] -> [ ] [ K_Marker D9 ]
+
+( CONTADOR QUE CRECE (Fali, 2026-10-01): las cifras de la izquierda que valen 0 se tapan con TapaCifra, que se )
+( dibuja como el muro. Empieza con decenas y unidades; a los 100 asoman las centenas y a los 1000 los millares. )
+( Solo es dibujo: las cuentas siguen con D0-D9 debajo y ninguna otra regla mira TapaCifra. )
+late [ TapaCifra ] -> [ ]
+late [ K_Marker D0 no TapaCifra ] -> [ K_Marker D0 TapaCifra ]
+late [ H_Marker D0 no TapaCifra ] -> [ H_Marker D0 TapaCifra ]
+late [ H_Marker TapaCifra ] [ K_Marker no D0 ] -> [ H_Marker ] [ K_Marker ]
 
 late [ MovS ] -> [ ]
 
